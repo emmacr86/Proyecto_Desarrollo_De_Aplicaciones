@@ -11,7 +11,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
 
         public int nombre { get; set; }
 
-        public decimal costo { get; set; }
+        public String detalle { get; set; }
 
     }
 }
