@@ -14,60 +14,63 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3  border">
-                <div class="container">
-                    <h4>Profile Photo</h4>
+                <div class="card" style="max-width: 100%">
+                    <img class="card-img-top" src="~/images/img_206976.png" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Profile Photo</h4>
+                        <p class="card-text">Perfil de Usuario</p>
+                    </div>
                 </div>
-
             </div>
 
-            <div class="col-sm-9 bg-dark text-white border">
-                <h4>Profile Data</h4>
+            <div class="col-sm-9 border">
+                <h4>Profile Data</h4> <br />
+                <div>
+                    <style>
+                        table, th, td {
+                            border: 1px solid;
+                        }
+                    </style>
+                    <div class="row">
+                        <div >
+                            <div id="cuadro">
+                                <label style="width:150px; text-align:right"> Cédula: </label> <input type="text" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][1]" disabled>
+                            </div>
+                            <div id="cuadro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <div id="cuadro">
+                                <label style="width:150px"> Nombre: </label><input type="text" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][2]" disabled>
+                            </div>
+                            <div id="cuadro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div >
+                            <div id="cuadro">
+                                <label style="width:150px"> Primer Apellido: </label><input type="text" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][3]" disabled>
+                            </div>
+                            <div id="cuadro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div >
+                            <div id="cuadro">
+                                <label style="width:150px"> Segundo Apellido: </label><input type="text" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][4]" disabled>
+                            </div>
+                            <div id="cuadro">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    @*<div>
-            <style>
-                table, th, td {
-                    border: 1px solid;
-                }
-            </style>
-            <img src="~/imagenes/background.jpg" class="bg" />
-            <div class="row">
-                <div class="col-md-4">
-                    <div id="cuadro">
-                        <p>Cédula: @Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][1]</p>
-                    </div>
-                    <div id="cuadro">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div id="cuadro">
-                        <p>Nombre: @Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][2]</p>
-                    </div>
-                    <div id="cuadro">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div id="cuadro">
-                        <p>Primer Apellido: @Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][3]</p>
-                    </div>
-                    <div id="cuadro">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div id="cuadro">
-                        <p>Segundo Apellido: @Proyecto_Desarrollo_de_Sistemas.Models.usuario.tablamain.Rows[0][4]</p>
-                    </div>
-                    <div id="cuadro">
-                    </div>
-                </div>
-            </div>
-        </div>*@
+
 </body>
 </html>
