@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Proyecto_Desarrollo_de_Sistemas.Models
@@ -37,6 +40,36 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
         public decimal latitud { get; set; }
 
         public decimal longitud { get; set; }
+        public static DataTable usetbl { get; set; }
+        public static DataTable tablamain { get; set; }
+
+        capaDatos objCapaDatos = new capaDatos();
+
+        public DataTable Consulta(int id)
+        {
+            StringBuilder sqlQuery = new StringBuilder();
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            try
+            {
+                sqlQuery.Append(" Select * from usuario ");
+                if (id != 0)
+                {
+                    sqlQuery.Append(" where cedula = @usuario ");
+                    comando.Parameters.Add("@usuario", SqlDbType.Int).Value = id;
+                    tabla = objCapaDatos.EjecutarConsulta(sqlQuery, comando);
+                }
+                else
+                {
+                    tabla = objCapaDatos.EjecutarConsulta(sqlQuery);
+                }
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error en la consulta");
+            }
+        }
 
     }
 }
