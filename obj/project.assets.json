@@ -456,11 +456,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SV798LX\\OneDrive - EY\\Universidad\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
+      "projectUniqueName": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
       "projectName": "Proyecto_Desarrollo_de_Sistemas",
-      "projectPath": "C:\\Users\\SV798LX\\OneDrive - EY\\Universidad\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
+      "projectPath": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
       "packagesPath": "C:\\Users\\SV798LX\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SV798LX\\OneDrive - EY\\Universidad\\Proyecto_Desarrollo_De_Aplicaciones\\obj\\",
+      "outputPath": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SV798LX\\AppData\\Roaming\\NuGet\\NuGet.Config",

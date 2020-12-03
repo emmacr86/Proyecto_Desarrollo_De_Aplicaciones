@@ -5,11 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="foto.jpg" />
+    <None Remove="images\foto.jpg" />
+    <None Remove="images\img_206976.png" />
+    <None Remove="img_206976.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Bootstrap\" />
+    <Folder Include="images\" />
   </ItemGroup>
 
 </Project>

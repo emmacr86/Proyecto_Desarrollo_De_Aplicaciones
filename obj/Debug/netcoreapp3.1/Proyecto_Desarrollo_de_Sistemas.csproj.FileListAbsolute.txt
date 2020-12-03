@@ -84,3 +84,46 @@ C:\Users\SV798LX\OneDrive - EY\Universidad\Proyecto_Desarrollo_De_Aplicaciones\o
 C:\Users\SV798LX\OneDrive - EY\Universidad\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.pdb
 C:\Users\SV798LX\OneDrive - EY\Universidad\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.genruntimeconfig.cache
 C:\Users\SV798LX\OneDrive - EY\Universidad\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.csprojAssemblyReference.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\appsettings.json
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.exe
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.deps.json
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.runtimeconfig.json
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.runtimeconfig.dev.json
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.pdb
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.Views.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.Views.pdb
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.csprojAssemblyReference.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.AssemblyInfoInputs.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.AssemblyInfo.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.csproj.CoreCompileInputs.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.MvcApplicationPartsAssemblyInfo.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.RazorAssemblyInfo.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.RazorAssemblyInfo.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\staticwebassets\Proyecto_Desarrollo_de_Sistemas.StaticWebAssets.Manifest.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\staticwebassets\Proyecto_Desarrollo_de_Sistemas.StaticWebAssets.xml
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\scopedcss\bundle\Proyecto_Desarrollo_de_Sistemas.styles.css
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.TagHelpers.input.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.TagHelpers.output.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.RazorCoreGenerate.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.RazorTargetAssemblyInfo.cache
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.RazorTargetAssemblyInfo.cs
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.Views.pdb
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.csproj.CopyComplete
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.dll
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.pdb
+C:\dev\Proyecto_Desarrollo_De_Aplicaciones\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.genruntimeconfig.cache

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pnAoUPYWqfABBp1eh2CGCyA4dgtUO188qBKkt5579NvZa/Hid5swBVoW1gbl/1w+P05iaQVz8mJZpyEYqaUdYw==",
+  "dgSpecHash": "6mFhhXnmukeHUVnMjWJDOjBt1F9gSct0Q4O9tZ/Ibc1ImjdfEgl5oEKZ21MvXygOcBIjPCy5MyCLRheO40oIcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SV798LX\\OneDrive - EY\\Universidad\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
+  "projectFilePath": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SV798LX\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\SV798LX\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
