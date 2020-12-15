@@ -13,9 +13,9 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
         public static DataTable usetbl;
         public static DataTable tablamain;
 
-        static string cadenaconexion = "Data Source=local;Initial Catalog=Db_Maridos_Alquiler;Integrated Security=True";
+        static string cadenaconexion = "Data Source=(local);Initial Catalog = Db_Maridos_Alquiler; Integrated Security = True";
             static SqlConnection conexion = new SqlConnection(cadenaconexion);
-            public DataTable EjecutarConsulta(StringBuilder query, SqlCommand comando = null)
+            public static DataTable EjecutarConsulta(StringBuilder query, SqlCommand comando = null)
             {
                 DataTable tabla = new DataTable();
                 try
@@ -42,7 +42,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
                 }
             }
 
-            public int Insertar(StringBuilder query, SqlCommand comando)
+            public static int Insertar(StringBuilder query, SqlCommand comando)
             {
                 int resultado = 0;
                 try
@@ -62,18 +62,18 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
                 }
             }
 
-        public DataTable Consulta(int id)
+        public static DataTable Consulta(string id)
         {
             StringBuilder sqlQuery = new StringBuilder();
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
             try
             {
-                sqlQuery.Append(" Select * from usuario ");
-                if (id != 0)
+                sqlQuery.Append(" Select * from Usuario ");
+                if (id != null)
                 {
-                    sqlQuery.Append(" where cedula = @usuario ");
-                    comando.Parameters.Add("@usuario", SqlDbType.Int).Value = id;
+                    sqlQuery.Append(" where id = @usuario ");
+                    comando.Parameters.Add("@usuario", SqlDbType.VarChar).Value = id;
                     tabla = EjecutarConsulta(sqlQuery, comando);
                 }
                 else
