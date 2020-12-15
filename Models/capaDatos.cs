@@ -10,7 +10,10 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
 {
     public class capaDatos
     {
-            static string cadenaconexion = "Data Source=CR2380232W3;Initial Catalog=proyecto_desarrollo;Integrated Security=True";
+        public static DataTable usetbl;
+        public static DataTable tablamain;
+
+        static string cadenaconexion = "Data Source=local;Initial Catalog=Db_Maridos_Alquiler;Integrated Security=True";
             static SqlConnection conexion = new SqlConnection(cadenaconexion);
             public DataTable EjecutarConsulta(StringBuilder query, SqlCommand comando = null)
             {
@@ -58,7 +61,34 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
                     throw new Exception("Error en Capa de Datos" + ex.Message);
                 }
             }
+
+        public DataTable Consulta(int id)
+        {
+            StringBuilder sqlQuery = new StringBuilder();
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            try
+            {
+                sqlQuery.Append(" Select * from usuario ");
+                if (id != 0)
+                {
+                    sqlQuery.Append(" where cedula = @usuario ");
+                    comando.Parameters.Add("@usuario", SqlDbType.Int).Value = id;
+                    tabla = EjecutarConsulta(sqlQuery, comando);
+                }
+                else
+                {
+                    tabla = EjecutarConsulta(sqlQuery);
+                }
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error en la consulta");
+            }
         }
+
+    }
     }
  
 
