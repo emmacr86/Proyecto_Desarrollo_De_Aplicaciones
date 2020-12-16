@@ -3,38 +3,47 @@ using Microsoft.AspNetCore.Mvc;
 using Proyecto_Desarrollo_de_Sistemas.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Proyecto_Desarrollo_de_Sistemas.Controllers
 {
-    public class HomeController : Controller
+    public class PerfilController : Controller
     {
-        // GET: HomeController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        public ActionResult Index(usuario useer)
+        // GET: PerfilController
+        [HttpGet]
+        public ActionResult Index(int uusuario)
         {
-            //capaDatos.tablamain = capaDatos.Consulta(useer.id);
+            //quitar esto
+            //uusuario = 1;
+            //quitar esto
+            capaDatos.tablamain = capaDatos.Consulta(uusuario);
             return View();
         }
 
-        // GET: HomeController/Details/5
+        [HttpPost]
+        public ActionResult Index(usuario objUsuario)
+        {
+            DataTable tablaraw = new DataTable();
+            tablaraw = capaDatos.tablamain;
+            return View();
+        }
+
+        // GET: PerfilController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: HomeController/Create
+        // GET: PerfilController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: HomeController/Create
+        // POST: PerfilController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -49,13 +58,13 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
             }
         }
 
-        // GET: HomeController/Edit/5
+        // GET: PerfilController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: HomeController/Edit/5
+        // POST: PerfilController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -70,13 +79,13 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
             }
         }
 
-        // GET: HomeController/Delete/5
+        // GET: PerfilController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: HomeController/Delete/5
+        // POST: PerfilController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

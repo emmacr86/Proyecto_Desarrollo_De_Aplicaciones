@@ -1,8 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Proyecto_Desarrollo_de_Sistemas.Models.capaDatos
+<!DOCTYPE html>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Perfil Usuario</title>
+    <link href="~/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Bootstrap/bootstrap-grid.css" rel="stylesheet" />
+    <script src="~/Bootstrap/bootstrap.js"></script>
+    <script src="~/js/myScript.js"></script>
+</head>
+<body>
+    @*<div class="container-fluid">*@
+        <div class="row content">
+            <div class="col-sm-3  border">
+                <div class="card" style="width:100%">
+                    <img class="card-img-top" src="~/images/img_206976.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2]</h5>
+                        <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3]</h5>
+                        <button id="cancelar" type="button" onclick="disable()" hidden>Cancelar</button>
+                        <button id="editar" type="button" onclick="enable()">Editar perfil</button>
+                        <button id="salvar" type="button" hidden>Salvar datos</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 border">
+                <h4>Perfil de Usuario</h4> <br />
+                <div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width:150px"> Cédula: </label><input type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1]" disabled>
+                        </div>
+                    </div>    <br />
+                    <div class="row">
+                        <div class="col">
+                            <label style="width:150px"> Nombre: </label><input id="nombre" type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2]" disabled>
+                        </div>
+                        <div class="col">
+                            <label style="width:150px"> Primer Apellido: </label><input id="apellido1" type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3]" disabled>
+                        </div>
+                    </div>  <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width:150px"> Segundo Apellido: </label><input id="apellido2" type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][4]" disabled>
+                        </div>
+                    </div> <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width:150px"> Teléfono: </label><input id="telefono" type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][6]" disabled>
+                        </div>
+                    </div> <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="width:150px"> Dirección: </label><input id="direccion" type="text" class="form-control" placeholder="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][7]" disabled>
+                        </div>
+                    </div>  <br />
+                </div>
+            </div>
+        </div>
+    @*</div>*@
+</body>
+</html>
