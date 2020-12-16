@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    @model Proyecto_Desarrollo_de_Sistemas.Models.usuario
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand"style="margin-left:500px" asp-area="" asp-controller="Inicio" asp-action="Index"> <img src="~/tool.png" style="height:30px" />Maridos de Alquiler</a>
+                <a class="navbar-brand" style="margin-left:500px" asp-area="" asp-controller="Inicio" asp-action="Index"> <img src="~/tool.png" style="height:30px" />Maridos de Alquiler</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,7 +30,7 @@
         <a></a>
         <a href="@Url.Action("Index", "Inicio")"> Inicio</a>
         <a href="#services">Historial</a>
-        <a href="#clients">Datos Personales</a>
+        <a href="@Url.Action("Index", "Perfil")">Datos Personales</a>
         <a href="@Url.Action("Index", "About")"> About</a>
         <a href="#clients">Salir</a>
     </div>

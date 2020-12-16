@@ -6414,19 +6414,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SV798LX\\.nuget\\packages\\": {}
+    "C:\\Users\\Emma\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
+      "projectUniqueName": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj",
       "projectName": "Proyecto_Desarrollo_de_Sistemas",
-      "projectPath": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
-      "packagesPath": "C:\\Users\\SV798LX\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Proyecto_Desarrollo_De_Aplicaciones\\obj\\",
+      "projectPath": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj",
+      "packagesPath": "C:\\Users\\Emma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\SV798LX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6438,7 +6442,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6450,7 +6453,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
@@ -6479,7 +6481,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

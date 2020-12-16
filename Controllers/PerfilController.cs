@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Desarrollo_de_Sistemas.Models;
+using Proyecto_Desarrollo_de_Sistemas.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
 {
     public class PerfilController : Controller
     {
+        public static usuario usuario = new usuario();
+
         // GET: PerfilController
         [HttpGet]
         public ActionResult Index(int uusuario)
@@ -19,8 +22,10 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
             //quitar esto
             //uusuario = 1;
             //quitar esto
+
+            usuario = Inicio.ObtenerUsuario(1);
             capaDatos.tablamain = capaDatos.Consulta(uusuario);
-            return View();
+            return View(usuario);
         }
 
         [HttpPost]
