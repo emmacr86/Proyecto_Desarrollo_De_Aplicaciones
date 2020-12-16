@@ -4,6 +4,7 @@ using Proyecto_Desarrollo_de_Sistemas.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,18 +14,20 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
     {
         // GET: PerfilController
         [HttpGet]
-        public ActionResult Index(string uusuario)
+        public ActionResult Index(int uusuario)
         {
+            //quitar esto
+            uusuario = 1;
+            //quitar esto
             capaDatos.tablamain = capaDatos.Consulta(uusuario);
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(usuario uusser)
+        public ActionResult Index(usuario objUsuario)
         {
             DataTable tablaraw = new DataTable();
-            tablaraw = capaDatos.Consulta(uusser.id);
-            ViewBag.msg = "Datos Guardados";
+            tablaraw = capaDatos.tablamain;
             return View();
         }
 

@@ -10,10 +10,24 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
 {
     public class capaDatos
     {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellido1 { get; set; }
+        public string apellido2 { get; set; }
+        public string correo { get; set; }
+        public string contrasena { get; set; }
+        public int telefono { get; set; }
+        public string direccion { get; set; }
+        public decimal latitud { get; set; }
+        public decimal longitud { get; set; }
+        public DateTime nacimiento { get; set; }
+        public DateTime fecha_registro { get; set; }
+        public String tipo_usuario { get; set; }
+        public Boolean estado { get; set; }
         public static DataTable usetbl;
         public static DataTable tablamain;
 
-        static string cadenaconexion = "Data Source=(local);Initial Catalog = Db_Maridos_Alquiler; Integrated Security = True";
+        static string cadenaconexion = "Data Source=(local);Initial Catalog=Proyecto_Desarrollo;Integrated Security=True";
             static SqlConnection conexion = new SqlConnection(cadenaconexion);
             public static DataTable EjecutarConsulta(StringBuilder query, SqlCommand comando = null)
             {
@@ -62,7 +76,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
                 }
             }
 
-        public static DataTable Consulta(string id)
+        public static DataTable Consulta(int id)
         {
             StringBuilder sqlQuery = new StringBuilder();
             SqlCommand comando = new SqlCommand();
@@ -70,10 +84,10 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
             try
             {
                 sqlQuery.Append(" Select * from Usuario ");
-                if (id != null)
+                if (id != 0)
                 {
                     sqlQuery.Append(" where id = @usuario ");
-                    comando.Parameters.Add("@usuario", SqlDbType.VarChar).Value = id;
+                    comando.Parameters.Add("@usuario", SqlDbType.Int).Value = id;
                     tabla = EjecutarConsulta(sqlQuery, comando);
                 }
                 else
@@ -89,6 +103,6 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
         }
 
     }
-    }
+}
  
 

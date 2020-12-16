@@ -1,4 +1,5 @@
-﻿@model Proyecto_Desarrollo_de_Sistemas.Models.capaDatos
+﻿@model Proyecto_Desarrollo_de_Sistemas.Models.usuario
+
 <!DOCTYPE html>
 
 <html>
@@ -7,70 +8,80 @@
     <title>Perfil Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="~/js/myScript.js"></script>
+    <style>
+        table, th, td {
+            padding: 15px;
+        }
+
+        table {
+            border-spacing: 5px;
+        }
+    </style>
+
 </head>
 <body>
     <div class="row content" style="margin-left:40px; margin-right:40px">
         <div class="col-sm-3  border">
-            @using (Html.BeginForm())
-            {
-                <div class="card" style="width:100%">
-                    <img class="card-img-top" src="~/images/img_206976.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1]</h5>
-                        <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2]</h5>
-                        <div>
-                            <button id="cancelar" type="button" onclick="disable()" hidden>Cancelar</button>
-                            <button id="editar" type="button" onclick="enable()">Editar perfil</button>
-                            <input id="salvar" type="submit" value="Salvar Datos" hidden />
-                            <label style="color:darkgreen; display:block">@ViewBag.msg</label>
-                        </div>
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="~/images/img_206976.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1]</h5>
+                    <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2]</h5>
+                    <div>
+                        <button id="cancelar" type="button" onclick="disable()" hidden>Cancelar</button>
+                        <button id="editar" type="button" onclick="enable()">Editar perfil</button>
+
                     </div>
                 </div>
-            }
+            </div>
         </div>
         <div class="col-sm-9 border">
-            @*<img style="width:100%" src="~/images/kiefer-likens-ysfrLKs9cn0-unsplash.jpg" />*@
-            <h4>Perfil de Usuario</h4> <br />
-            <div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Usuario: </label><input type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][0]" disabled>
-                    </div>
-                </div>    <br />
-                <div class="row">
-                    <div class="col">
-                        <label style="width:150px"> Nombre: </label><input id="nombre" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1]" disabled>
-                    </div>
-                    <div class="col">
-                        <label style="width:150px"> Primer Apellido: </label><input id="apellido1" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2]" disabled>
-                    </div>
-                </div>  <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Segundo Apellido: </label><input id="apellido2" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3]" disabled>
-                    </div>
-                </div> <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Correo: </label><input id="correo" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][4]" disabled>
-                    </div>
-                </div> <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Contraseña: </label><input id="contrasena" type="password" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][5]" disabled>
-                    </div>
-                </div> <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Teléfono: </label><input id="telefono" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][6]" disabled>
-                    </div>
-                </div> <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <label style="width:150px"> Dirección: </label><input id="direccion" type="text" class="form-control" value="@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][7]" disabled>
-                    </div>
-                </div>  <br />
-            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <table>
+                    <tr>
+                        <td>Perfil de Usuario</td>
+                    </tr>
+                    <tr>                       
+                        <td>Nombre:</td>
+                        <td>@Html.TextBoxFor(x => x.nombre, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1], disabled = "disabled", id = "nombre", @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Primer Apellido:</td>
+                        <td>@Html.TextBoxFor(x => x.apellido1, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2], disabled = "disabled", id = "apellido1", @class = "form-control" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>Segundo Apellido:</td>
+                        <td>@Html.TextBoxFor(x => x.apellido2, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3], disabled = "disabled", id = "apellido2", @class = "form-control" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>Correo:</td>
+                        <td>@Html.TextBoxFor(x => x.correo, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][4], disabled = "disabled", id = "correo", @class = "form-control" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>Contraseña:</td>
+                        <td>@Html.TextBoxFor(x => x.contrasena, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][5], disabled = "disabled", id = "contrasena", @Type = "password", @class = "form-control" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>Teléfono:</td>
+                        <td>@Html.TextBoxFor(x => x.telefono, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][6], disabled = "disabled", id = "telefono", @class = "form-control" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>Dirección:</td>
+                        <td>@Html.TextBoxFor(x => x.direccion, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][7], disabled = "disabled", id = "direccion", @class = "form-control" })</td>
+                    </tr>
+
+                </table>
+                <div>
+                    <input id="salvar" class="btn btn-primary" type="submit" value="Salvar Datos" hidden />
+                </div>
+            }
         </div>
     </div>
 </body>

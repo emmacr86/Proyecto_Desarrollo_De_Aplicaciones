@@ -8,7 +8,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
 {
     public class usuario
     {
-        public string id { get; set; }
+        public int id { get; set; }
 
         [Required(ErrorMessage = "Digite su nombre")]
         public string nombre { get; set; }
