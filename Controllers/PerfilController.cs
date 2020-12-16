@@ -17,7 +17,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
         public ActionResult Index(int uusuario)
         {
             //quitar esto
-            uusuario = 1;
+            //uusuario = 1;
             //quitar esto
             capaDatos.tablamain = capaDatos.Consulta(uusuario);
             return View();
