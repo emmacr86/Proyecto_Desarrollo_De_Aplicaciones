@@ -9,7 +9,7 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
     {
         public int id { get; set; }
 
-        public int nombre { get; set; }
+        public String nombre { get; set; }
 
         public String detalle { get; set; }
 

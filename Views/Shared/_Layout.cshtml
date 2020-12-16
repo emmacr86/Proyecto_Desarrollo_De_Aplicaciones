@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Maridos de Alquiler</a>
+                <a class="navbar-brand"style="margin-left:500px" asp-area="" asp-controller="Inicio" asp-action="Index"> <img src="~/tool.png" style="height:30px" />Maridos de Alquiler</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,21 @@
         </nav>
     </header>
 
-            @RenderBody()
+    <div class="sidenav">
+        <a>
+            <img style="height:40px; margin-left:40px" src="~/yellow-user-icon-md.png" />
+        </a>
+        <a style="color:yellow" class="text-center">Bienvenido!!!</a>
+        <a style="color:yellow" class="text-center">@Model.nombre </a>
+        <a></a>
+        <a href="@Url.Action("Index", "Inicio")"> Inicio</a>
+        <a href="#services">Historial</a>
+        <a href="#clients">Datos Personales</a>
+        <a href="@Url.Action("Index", "About")"> About</a>
+        <a href="#clients">Salir</a>
+    </div>
+
+    @RenderBody()
 
 
     <footer class="border-top footer text-muted">

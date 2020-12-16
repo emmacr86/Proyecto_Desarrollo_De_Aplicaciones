@@ -1,10 +1,18 @@
-﻿
+﻿@model Proyecto_Desarrollo_de_Sistemas.Models.usuario
+
 @{
     ViewData["Title"] = "Inicio";
 }
 
+
+
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
     body {
@@ -38,8 +46,8 @@
             }
 
     .main2 {
-        margin-left: 160px; /* same as the width of the sidenav */
-        font-size: 28px; /* Increased text to enable scrolling */
+        margin-left: 160px;
+        font-size: 28px;
         padding: 0px 10px;
     }
 
@@ -52,84 +60,320 @@
         margin-top: 100px;
         margin-left: auto;
     }
+
+    #instructions {
+        position: absolute;
+        margin: 20px;
+        margin-left: 160px;
+        margin-top: 100px;
+        top: 0;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        font-family: sans-serif;
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+
+    .duration {
+        font-size: 2em;
+    }
+
+    .a white{
+        color:white; 
+    }
+
 </style>
 
 
-<div class="sidenav">
-    <a href="#contact">Inicio</a>
-    <a href="#about">Crear Citas</a>
-    <a href="#services">Historial</a>
-    <a href="#clients">Datos Personales</a>
-    <a href="#contact">About</a>
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header text-center">
+                <h4 class="modal-title text-center">Llamar a Marido</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Seleccione el tipo de servicio:
+                <label for="sel1">Seleccione el tipo de servicio</label>
+                <select class="form-control" id="sel1">
+                    <option>Construccción</option>
+                    <option>Electricidad</option>
+                    <option>Mantenimiento</option>
+                    <option>Jardinería</option>
+                </select>
+            </div>        
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" data-dismiss="modal" id="route" onclick="ShowDialog">Llamar Marido</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 
 <div class="main2">
-  <div id="map"></div>
+    <div id="map"></div>
 </div>
 
-
+<div id="instructions" style="display:none"></div>
+<div class="w3-container">
+    <button style=" margin-left: 1800px; margin-top: 625px; position: absolute;" class="w3-button w3-circle w3-black" data-toggle="modal" data-target="#myModal">+</button>
+</div>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZW1tYW1hc2lzIiwiYSI6ImNraGYwYTI4aTBuaXYyeHBqbXptM3VrOXoifQ.NFC2gh9UJEd5ACTERlTXMQ';
-    var map = new mapboxgl.Map({
-        style: 'mapbox://styles/mapbox/light-v10',
-        center: [-84.10195, 9.93799],
-        zoom: 15.5,
-        pitch: 45,
-        bearing: -17.6,
-        container: 'map',
-        antialias: true
-    });
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZW1tYW1hc2lzIiwiYSI6ImNraGYwYTI4aTBuaXYyeHBqbXptM3VrOXoifQ.NFC2gh9UJEd5ACTERlTXMQ';
+        var map = new mapboxgl.Map({
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: ['@Model.longitud','@Model.latitud'],
+            zoom: 16.5,
+            pitch: 45,
+            bearing: -17.6,
+            container: 'map',
+            antialias: true
+        });
 
-    // The 'building' layer in the mapbox-streets vector source contains building-height
-    // data from OpenStreetMap.
-    map.on('load', function () {
-        // Insert the layer beneath any symbol layer.
-        var layers = map.getStyle().layers;
+        var marker = new mapboxgl.Marker()
+            .setLngLat(['@Model.longitud','@Model.latitud' ])
+            .addTo(map);
 
-        var labelLayerId;
-        for (var i = 0; i < layers.length; i++) {
-            if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-                labelLayerId = layers[i].id;
-                break;
+        // The 'building' layer in the mapbox-streets vector source contains building-height
+        // data from OpenStreetMap.
+        map.on('load', function () {
+            // Insert the layer beneath any symbol layer.
+            var layers = map.getStyle().layers;
+
+            var labelLayerId;
+            for (var i = 0; i < layers.length; i++) {
+                if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+                    labelLayerId = layers[i].id;
+                    break;
+                }
             }
+
+            map.addLayer(
+                {
+                    'id': '3d-buildings',
+                    'source': 'composite',
+                    'source-layer': 'building',
+                    'filter': ['==', 'extrude', 'true'],
+                    'type': 'fill-extrusion',
+                    'minzoom': 15,
+                    'paint': {
+                        'fill-extrusion-color': '#aaa',
+
+                        // use an 'interpolate' expression to add a smooth transition effect to the
+                        // buildings as the user zooms in
+                        'fill-extrusion-height': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            15,
+                            0,
+                            15.05,
+                            ['get', 'height']
+                        ],
+                        'fill-extrusion-base': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            15,
+                            0,
+                            15.05,
+                            ['get', 'min_height']
+                        ],
+                        'fill-extrusion-opacity': 0.6
+                    }
+                },
+                labelLayerId
+            );
+        }
+        );
+
+        // initialize the map canvas to interact with later
+        var canvas = map.getCanvasContainer();
+
+        // an arbitrary start will always be the same
+        // only the end or destination will change
+        var start = ['@Model.longitud','@Model.latitud'];
+        var end = [@ViewBag.LongitudMarido, @ViewBag.LatitudMarido]
+
+        // create a function to make a directions request
+        function getRoute(end) {
+            // make a directions request using cycling profile
+            // an arbitrary start will always be the same
+            // only the end or destination will change
+            var start = ['@Model.longitud','@Model.latitud'];
+            var end = [@ViewBag.LongitudMarido, @ViewBag.LatitudMarido]
+            var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
+
+            // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+            var req = new XMLHttpRequest();
+            req.open('GET', url, true);
+            req.onload = function () {
+                var json = JSON.parse(req.response);
+                var data = json.routes[0];
+                var route = data.geometry.coordinates;
+                var geojson = {
+                    type: 'Feature',
+                    properties: {},
+                    geometry: {
+                        type: 'LineString',
+                        coordinates: route
+                    }
+                };
+                // if the route already exists on the map, reset it using setData
+                if (map.getSource('route')) {
+                    map.getSource('route').setData(geojson);
+                } else { // otherwise, make a new request
+                    map.addLayer({
+                        id: 'route',
+                        type: 'line',
+                        source: {
+                            type: 'geojson',
+                            data: {
+                                type: 'Feature',
+                                properties: {},
+                                geometry: {
+                                    type: 'LineString',
+                                    coordinates: geojson
+                                }
+                            }
+                        },
+                        layout: {
+                            'line-join': 'round',
+                            'line-cap': 'round'
+                        },
+                        paint: {
+                            'line-color': '#3887be',
+                            'line-width': 5,
+                            'line-opacity': 0.75
+                        }
+                    });
+                }
+                // add turn instructions here at the end
+                // get the sidebar and add the instructions
+                var instructions = document.getElementById('instructions');
+                var steps = data.legs[0].steps;
+
+                var tripInstructions = [];
+                for (var i = 0; i < steps.length; i++) {
+                    tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
+                    instructions.innerHTML = '<br><span class="duration">Tiempo de llegada: '
+                        + Math.floor(data.duration / 60) + ' min 🚴 </span>'
+                        + '<br><span class="duration">Le atenderá: @ViewBag.NombreMarido @ViewBag.ApellidoMarido  @ViewBag.Apellido2Marido</span>'
+                        + '<br><span class="duration">Celular: @ViewBag.TelefonoMarido </span>'
+                        + '<br><span class="duration">Correo: @ViewBag.CorreoMarido </span>';
+                }
+            };
+            req.send();
         }
 
-        map.addLayer(
-            {
-                'id': '3d-buildings',
-                'source': 'composite',
-                'source-layer': 'building',
-                'filter': ['==', 'extrude', 'true'],
-                'type': 'fill-extrusion',
-                'minzoom': 15,
-                'paint': {
-                    'fill-extrusion-color': '#aaa',
+        map.on('load', function () {
+            // make an initial directions request that
+            // starts and ends at the same location
+            getRoute(start);
 
-                    // use an 'interpolate' expression to add a smooth transition effect to the
-                    // buildings as the user zooms in
-                    'fill-extrusion-height': [
-                        'interpolate',
-                        ['linear'],
-                        ['zoom'],
-                        15,
-                        0,
-                        15.05,
-                        ['get', 'height']
-                    ],
-                    'fill-extrusion-base': [
-                        'interpolate',
-                        ['linear'],
-                        ['zoom'],
-                        15,
-                        0,
-                        15.05,
-                        ['get', 'min_height']
-                    ],
-                    'fill-extrusion-opacity': 0.6
+            // Add starting point to the map
+            map.addLayer({
+                id: 'point',
+                type: 'circle',
+                source: {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: [{
+                            type: 'Feature',
+                            properties: {},
+                            geometry: {
+                                type: 'Point',
+                                coordinates: start
+                            }
+                        }
+                        ]
+                    }
+                },
+                paint: {
+                    'circle-radius': 10,
+                    'circle-color': '#3887be'
+                }
+            });
+            // this is where the code from the next step will go
+
+        });
+
+    $('#route').click(function(){
+
+        var coordsObj = [@ViewBag.LongitudMarido, @ViewBag.LatitudMarido];
+        canvas.style.cursor = '';
+        var coords = Object.keys(coordsObj).map(function (key) {
+            return coordsObj[key];
+        });
+        var end = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                    type: 'Point',
+                    coordinates: coords
+                }
+            }
+            ]
+        };
+
+        console.log(coords);
+        console.log(end);
+
+
+        if(map.getLayer('end')) {
+        map.getSource('end').setData(end);
+    } else {
+        map.addLayer({
+            id: 'end',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [{
+                        type: 'Feature',
+                        properties: {},
+                        geometry: {
+                            type: 'Point',
+                            coordinates: coords
+                        }
+                    }]
                 }
             },
-            labelLayerId
-        );
-    });
+            paint: {
+                'circle-radius': 10,
+                'circle-color': '#f30'
+            }
+        });
+    }
+    getRoute(coords);
+
+    })
+
+    $('#route').click(function () {
+        console.log("llamo");
+        var x = document.getElementById("instructions");
+        if (x.style.display === "none") {
+            console.log("bloqueo");
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+            console.log("none");
+        }
+    })
+
+
+
 </script>

@@ -115,3 +115,4 @@ C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Razor\Views\Inicio\index.cshtml.g.cs
+C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
