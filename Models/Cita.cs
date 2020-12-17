@@ -10,19 +10,20 @@ namespace Proyecto_Desarrollo_de_Sistemas.Models
     {
         public int id { get; set; }
 
-        [Required(ErrorMessage = "Debe seleccionar un servicio")]
-        public int id_servicio { get; set; }
+        public int idUsuario { get; set; }
 
-        public int id_usuario { get; set; }
-
-        [Required(ErrorMessage = "Debe seleccionar una fecha")]
         public DateTime fecha { get; set; }
 
-        public TimeSpan hora { get; set; }
+        public string estado { get; set; }
 
-        public int id_status { get; set; }
+        public decimal totalNeto { get; set; }
 
-        public int id_colaborador { get; set; }
+        public string trabajo { get; set; }
+
+        public string nombreColaborador { get; set; }
+
+        
 
     }
 }
+
