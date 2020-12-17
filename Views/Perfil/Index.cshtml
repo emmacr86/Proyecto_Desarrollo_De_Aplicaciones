@@ -1,93 +1,116 @@
 ﻿@model Proyecto_Desarrollo_de_Sistemas.Models.usuario
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="~/js/myScript.js"></script>
 
-    <style>
+<style>
     .sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
     }
 
-    .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    }
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+        }
 
-    .sidenav a:hover {
-    color: #f1f1f1;
-    }
-        </style >
-
-        <div class="row content" style="margin-left:200px; margin-right:40px" >
-        <div class="col-sm-3  border" >
-        <div class="card" style="width:100%" >
-        <img class="card-img-top" src="~/images/img_avatar3.png" alt="Card image" style="width:100%" >
-        <div class="card-body" >
-        <h5 class="card-title" >@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1] </h5 >
-        <h5 class="card-title" >@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2] </h5 >
-        <div >
-        <button id="cancelar" type="button" onclick="disable()" hidden > Cancelar</button >
-        <button id="editar" type="button" onclick="enable()" > Editar perfil</button >
-        <button id="salvar" type="button" onclick="disable()" hidden > Salvar Datos</button >
-
-        </div >
-        </div >
-        </div >
-        </div >
-        <div class="col-sm-9 border" >
-        @using (Html.BeginForm())
-            {
-                @Html.ValidationSummary()
-                 <table >
-        <tr >
-        <td > Perfil de Usuario</td >
-        </tr >
-        <tr >
-        <td > Nombre:</td >
-        <td >@Html.TextBoxFor(x => x.nombre, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1], disabled = "disabled", id = "nombre", @class = "form-control" }) </td >
-        </tr >
-        <tr >
-        <td > Primer Apellido:</td >
-        <td >@Html.TextBoxFor(x => x.apellido1, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2], disabled = "disabled", id = "apellido1", @class = "form-control" }) </td >
-        </tr >
-
-        <tr >
-        <td > Segundo Apellido:</td >
-        <td >@Html.TextBoxFor(x => x.apellido2, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3], disabled = "disabled", id = "apellido2", @class = "form-control" }) </td >
-        </tr >
-
-        <tr >
-        <td > Correo:</td >
-        <td >@Html.TextBoxFor(x => x.correo, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][4], disabled = "disabled", id = "correo", @class = "form-control" }) </td >
-        </tr >
-
-        <tr >
-        <td > Contraseña:</td >
-        <td >@Html.TextBoxFor(x => x.contrasena, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][5], disabled = "disabled", id = "contrasena", @Type = "password", @class = "form-control" }) </td >
-        </tr >
-
-        <tr >
-        <td > Teléfono:</td >
-        <td >@Html.TextBoxFor(x => x.telefono, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][6], disabled = "disabled", id = "telefono", @class = "form-control" }) </td >
-        </tr >
-
-        <tr >
-        <td > Dirección:</td >
-        <td >@Html.TextBoxFor(x => x.direccion, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][7], disabled = "disabled", id = "direccion", @class = "form-control" }) </td >
-        </tr >
-
-        </table >
+            .sidenav a:hover {
+                color: #f1f1f1;
             }
-        </div >
-        </div >
+
+    table, th, td {
+        padding: 15px;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+</style>
+
+<div class="sidenav">
+    <a>
+        <img style="height:40px; margin-left:40px" src="~/yellow-user-icon-md.png" />
+    </a>
+    <a style="color:yellow" class="text-center">Bienvenido!!!</a>
+    <a style="color:yellow" class="text-center">@Model.nombre </a>
+    <a></a>
+    <a href="@Url.Action("Index", "Inicio", @Model)"> Inicio</a>
+    <a href="@Url.Action("Index", "Historial", @Model)">Historial</a>
+    <a href="@Url.Action("Index", "Perfil", @Model)">Datos Personales</a>
+    <a href="@Url.Action("Index", "About", @Model)"> About</a>
+    <a href="@Url.Action("Index", "Login")">Salir</a>
+</div>
+
+<div class="row content" style="margin-left:200px; margin-right:40px">
+    <div class="col-sm-3  border">
+        <div class="card" style="width:100%">
+            <img class="card-img-top" src="~/images/img_avatar3.png" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1] </h5>
+                <h5 class="card-title">@Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2] </h5>
+                <div>
+                    <button id="cancelar" type="button" onclick="disable()" hidden> Cancelar</button>
+                    <button id="editar" type="button" onclick="enable()"> Editar perfil</button>
+                    <button id="salvar" type="button" onclick="disable()" hidden> Salvar Datos</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9 border">
+        @using (Html.BeginForm())
+        {
+            @*@Html.ValidationSummary()*@
+            <table>
+                <tr>
+                    <td> Perfil de Usuario</td>
+                </tr>
+                <tr>
+                    <td> Nombre:</td>
+                    <td>@Html.TextBoxFor(x => x.nombre, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][1], disabled = "disabled", id = "nombre", @class = "form-control" }) </td>
+                </tr>
+                <tr>
+                    <td> Primer Apellido:</td>
+                    <td>@Html.TextBoxFor(x => x.apellido1, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][2], disabled = "disabled", id = "apellido1", @class = "form-control" }) </td>
+                </tr>
+
+                <tr>
+                    <td> Segundo Apellido:</td>
+                    <td>@Html.TextBoxFor(x => x.apellido2, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][3], disabled = "disabled", id = "apellido2", @class = "form-control" }) </td>
+                </tr>
+
+                <tr>
+                    <td> Correo:</td>
+                    <td>@Html.TextBoxFor(x => x.correo, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][4], disabled = "disabled", id = "correo", @class = "form-control" }) </td>
+                </tr>
+
+                <tr>
+                    <td> Contraseña:</td>
+                    <td>@Html.TextBoxFor(x => x.contrasena, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][5], disabled = "disabled", id = "contrasena", @Type = "password", @class = "form-control" }) </td>
+                </tr>
+
+                <tr>
+                    <td> Teléfono:</td>
+                    <td>@Html.TextBoxFor(x => x.telefono, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][6], disabled = "disabled", id = "telefono", @class = "form-control" }) </td>
+                </tr>
+
+                <tr>
+                    <td> Dirección:</td>
+                    <td>@Html.TextBoxFor(x => x.direccion, new { placeholder = @Proyecto_Desarrollo_de_Sistemas.Models.capaDatos.tablamain.Rows[0][7], disabled = "disabled", id = "direccion", @class = "form-control" }) </td>
+                </tr>
+
+            </table>
+        }
+    </div>
+</div>

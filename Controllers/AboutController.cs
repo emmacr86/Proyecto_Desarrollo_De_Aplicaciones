@@ -14,9 +14,9 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
     {
         public static usuario usuario = new usuario();
         // GET: AboutController
-        public ActionResult Index()
+        public ActionResult Index(usuario usuario)
         {
-            usuario = Inicio.ObtenerUsuario(1);
+            //usuario = Inicio.ObtenerUsuario(1);
             return View(usuario);
         }
 

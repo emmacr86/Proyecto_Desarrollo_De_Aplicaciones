@@ -122,5 +122,38 @@ namespace Proyecto_Desarrollo_de_Sistemas.Util
             return tabla;
         }
 
+        public static DataSet ValidarUsuarioIngresado(string correo, string contrasena)
+        {
+            SqlConnection conexion = new SqlConnection(@"Data Source=(local);Initial Catalog=proyecto_desarrollo;Integrated Security=True");
+            SqlCommand comando = new SqlCommand("SELECT * FROM Usuario WHERE correo = " + correo + " AND contrasenia = " + contrasena, conexion);
+            DataSet tabla = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(tabla);
+            return tabla;
+        }
+
+        public static int InsertarUsuarioNuevo(string nombre, string apellidos1, string apellidos2, string correo, string contrasena, int telefono, string direccion, decimal latitud, decimal longitud, DateTime nacimiento, DateTime fecha, string tipo_usuario, Boolean estado)
+        {
+            SqlConnection conexion = new SqlConnection(@"Data Source=(local);Initial Catalog=proyecto_desarrollo;Integrated Security=True");
+            SqlCommand comando = new SqlCommand("Insert Into Usuario(nombre,apellido1,apellido2,correo,contrasenia,telefono,direccion,latitud,longitud,fechaNacimiento,fechaRegistro,tipoUsuario,estado)Values('"
+            + nombre + "','" + apellidos1 + "','" + apellidos2 + "','" + correo + "','" + contrasena + "','" + telefono + "','" + direccion + "','" + latitud + "','" + longitud + "','" + nacimiento + "','" + fecha + "','" + tipo_usuario + "','" + Convert.ToInt32(estado) + "')", conexion);
+            conexion.Open();
+            return comando.ExecuteNonQuery();
+        }
+
+        public static DataSet SelectUsuariosClientes()
+        {
+            SqlConnection conexion = new SqlConnection(@"Data Source=(local);Initial Catalog=proyecto_desarrollo;Integrated Security=True");
+            SqlCommand comando = new SqlCommand("SELECT * FROM Usuario", conexion);
+            conexion.Open();
+            DataSet tabla = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(tabla);
+            return tabla;
+        }
+
+
+
+
     }
 }

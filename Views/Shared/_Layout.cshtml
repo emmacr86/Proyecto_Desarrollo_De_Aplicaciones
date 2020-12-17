@@ -21,19 +21,7 @@
         </nav>
     </header>
 
-    <div class="sidenav">
-        <a>
-            <img style="height:40px; margin-left:40px" src="~/yellow-user-icon-md.png" />
-        </a>
-        <a style="color:yellow" class="text-center">Bienvenido!!!</a>
-        <a style="color:yellow" class="text-center">@Model.nombre </a>
-        <a></a>
-        <a href="@Url.Action("Index", "Inicio")"> Inicio</a>
-        <a href="#services">Historial</a>
-        <a href="@Url.Action("Index", "Perfil")">Datos Personales</a>
-        <a href="@Url.Action("Index", "About")"> About</a>
-        <a href="#clients">Salir</a>
-    </div>
+
 
     @RenderBody()
 

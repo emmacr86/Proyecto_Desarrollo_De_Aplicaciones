@@ -78,11 +78,25 @@
         font-size: 2em;
     }
 
-    .a white{
-        color:white; 
+    .a white {
+        color: white;
     }
-
 </style>
+
+
+<div class="sidenav">
+    <a>
+        <img style="height:40px; margin-left:40px" src="~/yellow-user-icon-md.png" />
+    </a>
+    <a style="color:yellow" class="text-center">Bienvenido!!!</a>
+    <a style="color:yellow" class="text-center">@Model.nombre </a>
+    <a></a>
+    <a href="@Url.Action("Index", "Inicio", @Model)"> Inicio</a>
+    <a href="@Url.Action("Index", "Historial", @Model)">Historial</a>
+    <a href="@Url.Action("Index", "Perfil", @Model)">Datos Personales</a>
+    <a href="@Url.Action("Index", "About", @Model)"> About</a>
+    <a href="@Url.Action("Index", "Login")">Salir</a>
+</div>
 
 
 <!-- The Modal -->
@@ -106,7 +120,7 @@
                     <option>Mantenimiento</option>
                     <option>Jardinería</option>
                 </select>
-            </div>        
+            </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">

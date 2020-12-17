@@ -13,28 +13,26 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
 {
     public class PerfilController : Controller
     {
-        public static usuario usuario = new usuario();
+        //public static usuario usuario = new usuario();
 
         // GET: PerfilController
-        [HttpGet]
-        public ActionResult Index(int uusuario)
+        //[HttpGet]
+        public ActionResult Index(usuario usuario)
         {
             //quitar esto
             //uusuario = 1;
-            //quitar esto
-
-            usuario = Inicio.ObtenerUsuario(1);
-            capaDatos.tablamain = capaDatos.Consulta(uusuario);
+            //quitar esto          
+            capaDatos.tablamain = capaDatos.Consulta(usuario.id);
             return View(usuario);
         }
 
-        [HttpPost]
-        public ActionResult Index(usuario objUsuario)
-        {
-            DataTable tablaraw = new DataTable();
-            tablaraw = capaDatos.tablamain;
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult Index(usuario objUsuario)
+        //{
+        //    DataTable tablaraw = new DataTable();
+        //    tablaraw = capaDatos.tablamain;
+        //    return View();
+        //}
 
         // GET: PerfilController/Details/5
         public ActionResult Details(int id)

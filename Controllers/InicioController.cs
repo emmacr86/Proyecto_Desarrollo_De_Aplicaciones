@@ -19,9 +19,9 @@ namespace Proyecto_Desarrollo_de_Sistemas.Controllers
 
 
         // GET: InicioController
-        public ActionResult Index()
+        public ActionResult Index(usuario usuario)
         {
-            usuario =  Inicio.ObtenerUsuario(1);
+            //usuario =  Inicio.ObtenerUsuario(4);
 
             DataSet ds =  Inicio.SelectMarido();
             DataTable tabla = ds.Tables[0];

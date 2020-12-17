@@ -50,7 +50,7 @@ namespace Proyecto_Desarrollo_de_Sistemas
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Inicio}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

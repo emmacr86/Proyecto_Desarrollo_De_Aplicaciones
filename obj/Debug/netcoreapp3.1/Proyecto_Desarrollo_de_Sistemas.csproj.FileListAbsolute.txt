@@ -116,3 +116,6 @@ C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.dll
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.pdb
 C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.genruntimeconfig.cache
+C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Proyecto_Desarrollo_de_Sistemas.csprojAssemblyReference.cache
+C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\Emma\Desktop\UH\Desarrollo de Aplicaciones\Proyecto\Proyecto_Desarrollo_de_Sistemas\obj\Debug\netcoreapp3.1\Razor\Views\Registro\Index.cshtml.g.cs

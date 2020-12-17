@@ -1,0 +1,106 @@
+﻿@model Proyecto_Desarrollo_de_Sistemas.Models.usuario
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        font-family: Helvetica;
+        background: #eee;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .sidenav {
+        display: none;
+    }
+</style>
+
+<div class="container">
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6" style="margin-left:30%">
+        <div class="header">
+
+            <div class="header__text-group text-center">
+                <h1 class="header__heading">Registro de Usuario</h1>
+                <p class="header__subheading">Maridos de alquiler</p>
+            </div> <!-- close .text-group -->
+        </div> <!-- close .header -->
+
+        <hr />
+        <br />
+
+        @using (Html.BeginForm("Create", "Registro",  FormMethod.Post))
+        {@Html.ValidationSummary()
+
+        <div class="form-register">
+            <form name="register" >
+                <input name="utf8" type="hidden" value="✓">
+
+                <div class="form-group">
+                    <label for="user_first_name">Nombre</label>
+                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", @placeholder = "Nombre", @required = "required"})
+                </div> <!-- close .form-group -->
+
+
+                <div class="form-group">
+                    <label for="user_last_name">Primer Apellido</label>
+                    @Html.TextBoxFor(x => x.apellido1, new { @class = "form-control", @placeholder = "Primer Apellido", @required = "required" })
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_last_name">Segundo Apellido</label>
+                    @Html.TextBoxFor(x => x.apellido2, new { @class = "form-control", @placeholder = "Segundo Apellido", @required = "required" })
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_email">
+                        Email address
+                    </label>
+                    @Html.TextBoxFor(x => x.correo, new { @class = "form-control", @placeholder = "Ingrese su correo", @required = "required", @type = "email" })
+
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_password">
+                        Contraseña <span class="text-secondary">(min. 6 char)</span>
+                    </label>
+                    @Html.TextBoxFor(x => x.contrasena, new { @class = "form-control", @placeholder = "Ingrese su contraseña", @required = "required" })
+
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_last_name">Telefono</label>
+                    @Html.TextBoxFor(x => x.telefono, new { @class = "form-control", @placeholder = "Teléfono", @required = "required"})
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_last_name">Dirección</label>
+                    @Html.TextBoxFor(x => x.direccion, new { @class = "form-control", @placeholder = "Dirección", @required = "required" })
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_last_name">Latitud</label>
+                    @Html.TextBoxFor(x => x.latitud, new { @class = "form-control", @placeholder = "Latitud", @required = "required"})
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <label for="user_last_name">Longitud</label>
+                    @Html.TextBoxFor(x => x.longitud, new { @class = "form-control", @placeholder = "Longitud", @required = "required"})
+                </div> <!-- close .form-group -->
+
+                <div class="form-group">
+                    <input type="submit" value="Crear cuenta" class="btn btn-primary">
+                </div> <!-- close .form-group -->
+
+            </form>
+        </div> <!-- close .form -->
+    }
+
+    <div class="sheet sheet--padding-small text-center">
+        <p class="epsilon">Ya está registrado? <a href="@Url.Action("Index", "Login")">Login</a></p>
+        <label style="color:red">@ViewBag.error</label><br />
+    </div>
+
+    </div>
+</div>
+
