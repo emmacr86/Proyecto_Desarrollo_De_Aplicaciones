@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj": {}
+    "C:\\Users\\ASUS ROG\\Desktop\\Proyecto Maridos de Alquiler App\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj": {
+    "C:\\Users\\ASUS ROG\\Desktop\\Proyecto Maridos de Alquiler App\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS ROG\\Desktop\\Proyecto Maridos de Alquiler App\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
         "projectName": "Proyecto_Desarrollo_de_Sistemas",
-        "projectPath": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\Proyecto_Desarrollo_de_Sistemas.csproj",
-        "packagesPath": "C:\\Users\\Emma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emma\\Desktop\\UH\\Desarrollo de Aplicaciones\\Proyecto\\Proyecto_Desarrollo_de_Sistemas\\obj\\",
+        "projectPath": "C:\\Users\\ASUS ROG\\Desktop\\Proyecto Maridos de Alquiler App\\Proyecto_Desarrollo_De_Aplicaciones\\Proyecto_Desarrollo_de_Sistemas.csproj",
+        "packagesPath": "C:\\Users\\ASUS ROG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS ROG\\Desktop\\Proyecto Maridos de Alquiler App\\Proyecto_Desarrollo_De_Aplicaciones\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ASUS ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -45,6 +47,13 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+<<<<<<< HEAD
+=======
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+>>>>>>> b61e603b776e7a28daf00de9d5515debefab3c9e
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"
